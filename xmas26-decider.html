@@ -364,12 +364,45 @@
     <h2>The book-it list</h2>
     <div class="todo" id="todoList">
       <label><input type="checkbox" data-k="house"><span>Book the house — after the crew confirms (⚠️ Estuary &amp; Scotland 24 h free-cancel · ✅ Eclipse free till 12 Dec · 🛟 Karoola net till 21 Dec)</span></label>
-      <label><input type="checkbox" data-k="cruise"><span>Book the Jervis Bay dolphin cruise — holiday week sells out</span></label>
+      <label><input type="checkbox" data-k="cruise"><span>🐬 Book the Jervis Bay dolphin cruise — $59/adult · $39/kids · checked live: Mon 28 has 6 sessions 10am–3pm, ALL open — book by early Dec</span></label>
       <label><input type="checkbox" data-k="yumcha"><span>Book Sunday yum cha — Suki Mona Vale (02 8418 8898) or Peking Garden Gosford</span></label>
       <label><input type="checkbox" data-k="sunsun"><span>Ring Sun Sun Chinese, Culburra — lock the banquet night</span></label>
       <label><input type="checkbox" data-k="fishing"><span>NSW fishing licence $7 / 3 days — one per adult, buy online</span></label>
       <label><input type="checkbox" data-k="vest"><span>Pack kids&apos; lifejackets, prawn nets + the crab trap</span></label>
     </div>
+  </div>
+</section>
+<section class="section" id="booze">
+  <div class="wrap">
+    <h2>🍺 The booze run</h2>
+    <p>Bottle shops trade normal hours on Boxing Day + Mon 28 — NSW only shuts them Christmas Day. But the nearest bottleo might be 25 min away (or a ferry). <b>The move: buy it all in Auburn before you leave.</b></p>
+    <div class="todo" id="boozeList">
+      <label><input type="checkbox" data-k="bbeer"><span>🍺 Beer — 2 slabs + one fancy 6-pack <small>48 cans ≈ 4 adults × 3 nights of arvo + evening rounds</small></span></label>
+      <label><input type="checkbox" data-k="bwine"><span>🍷 Wine — 6 bottles <small>bubbles for the Boxing Day toast, red for after Oscar&apos;s asleep</small></span></label>
+      <label><input type="checkbox" data-k="bspirit"><span>🥃 The nightcap — 1 bottle whisky or gin + tonic &amp; mixers</span></label>
+      <label><input type="checkbox" data-k="bspritz"><span>🍹 Spritz kit — Aperol + prosecco <small>kayak-o&apos;clock on the jetty</small></span></label>
+      <label><input type="checkbox" data-k="bzero"><span>🥤 Driver duty + Oscar — 0.0% beers, softies, juice boxes</span></label>
+      <label><input type="checkbox" data-k="bice"><span>🧊 Ice — 3 bags + the esky <small>the real MVP — house fridges won&apos;t fit it all</small></span></label>
+      <label><input type="checkbox" data-k="bsnacks"><span>🫒 9pm session supplies — limes, cheese, crackers, dark chocolate</span></label>
+      <label><input type="checkbox" data-k="bferry"><span>🛶 Scotland only — ALL of it crosses on the ferry <small>one trolley per trip · last ferry 6:30pm</small></span></label>
+    </div>
+    <p><small>Mates joining? Add a slab, 2 bottles and a bag of ice. Forgot something? Each house page lists the nearest bottleo — they trade Boxing Day &amp; Mon 28, shut Christmas Day only.</small></p>
+  </div>
+</section>
+<section class="section" id="water">
+  <div class="wrap">
+    <h2>🚤 The extras menu — more on the water</h2>
+    <p>Everything below is bookable online at Jervis Bay Wild, Huskisson (15 Field St) — prices checked live 7 Oct. Tap the ones we&apos;re keen on; the page remembers.</p>
+    <div class="todo" id="waterList">
+      <label><input type="checkbox" data-k="wpassage"><span>🗺️ Passage cruise — from $109 · 2.5h past Hyams Beach, Honeymoon Bay + Point Perpendicular <small>the see-everything cruise, wildlife included</small></span></label>
+      <label><input type="checkbox" data-k="wboat"><span>⚓ Self-drive boat hire — from $115 · 2–5h on Currambene Creek <small>you&apos;re the skipper — the fix for the dead Shoalhaven boat hire, fishing our way</small></span></label>
+      <label><input type="checkbox" data-k="wpontoon"><span>🛥️ Pontoon + BBQ hire — from $350 · half or full day <small>the whole crew on one boat, snags on the grill</small></span></label>
+      <label><input type="checkbox" data-k="wkayak"><span>🛶 Kayak / SUP hire — from $49 · 2h on flat-water Currambene Creek <small>ages 5+ · no experience needed</small></span></label>
+      <label><input type="checkbox" data-k="wsun"><span>🌅 Sundowners cruise — from $55 · 2h golden hour on the creek <small>sunset ~8:15pm — the post-nap session</small></span></label>
+      <label><input type="checkbox" data-k="wstars"><span>⭐ Stargazing night cruise — $125 · 2.5h under the Milky Way <small>past Oscar&apos;s bedtime — only if someone&apos;s on kid duty</small></span></label>
+      <label><input type="checkbox" data-k="wsplurge"><span>🤿 Swim with wild dolphins — from $359 <small>the once-in-a-lifetime splurge</small></span></label>
+    </div>
+    <p><small>🐬 The main dolphin cruise: $59/adult · $39/kids (2–14) · infants free · 1.5h. Summer departures add boom netting (extra cost) — Oscar-sized fun. Mon 28 Dec: 6 sessions 10am–3pm, all open as of 7 Oct — book by early Dec.</small></p>
   </div>
 </section>
 <footer class="foot">
@@ -659,7 +692,7 @@ themeBtn.addEventListener("click", () => {
 /* to-confirm checklist persistence */
 try {
   const checks = JSON.parse(localStorage.getItem("xmas26-checks") || "{}");
-  document.querySelectorAll("#todoList input[type=checkbox]").forEach(cb => {
+  document.querySelectorAll("#todoList input[type=checkbox], #boozeList input[type=checkbox], #waterList input[type=checkbox]").forEach(cb => {
     cb.checked = !!checks[cb.dataset.k];
     cb.addEventListener("change", () => {
       const c = JSON.parse(localStorage.getItem("xmas26-checks") || "{}");
